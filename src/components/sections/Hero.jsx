@@ -17,7 +17,7 @@ export function HeroSection() {
           <span className="emphasize">SOFTWARE DEVELOPER</span>
         </div>
       </div>
-      <img src={avatar} alt="avatar" className="w-80 drop-shadow-xl mx-auto sm:mx-0"/>
+      <img src={`${import.meta.env.BASE_URL}avatar.svg`} alt="avatar" className="w-80 drop-shadow-xl mx-auto sm:mx-0"/>
       <div className="shadow-custom"></div>
     </div>
   )

@@ -55,7 +55,7 @@ export function MyWork() {
       className="mt-12 w-full max-w-4xl mx-auto text-center"
     >
       <div className="flex items-center justify-center my-34">
-        <img src={wire} alt="wire"/>
+        <img src={`${import.meta.env.BASE_URL}wire.svg`} alt="wire"/>
       </div>
 
       <h2 className="text-4xl font-bold colorful-title text-[clamp(3rem,3vw,6rem)]! mb-16!" id="myWork">MY WORK</h2>
