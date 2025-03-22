@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Satoshi", "sans-serif";
+    --color-light-primary: #FFF5EE;
+    --color-dark-primary: #272625;
+    --color-heading: #FF7EB3
+}
+
+html, body {
+    cursor: none;
+}
+
+#root {
+    @apply p-6 text-dark-primary
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.custom-cursor {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, background-color 0.2s ease, border 0.2s ease, width 0.2s ease, height 0.2s ease;
+    z-index: 9999;
+}
+
+.custom-cursor.pointer {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+}
+
+.grain {
+    background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+    background-size: 300px 300px;
+    background-blend-mode: multiply;
+}
+
+.colorful-title {
+    order: 2;
+    color: #fff7f3;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.75em;
+    text-align: center;
+    text-shadow:
+            3px 1px 1px #ffbd59,
+            2px 2px 1px #ff7eb3,
+            4px 2px 1px #ffbd59,
+            3px 3px 1px #ff7eb3,
+            5px 3px 1px #ffbd59,
+            4px 4px 1px #ff7eb3,
+            6px 4px 1px #ffbd59,
+            5px 5px 1px #ff7eb3,
+            7px 5px 1px #ffbd59,
+            6px 6px 1px #ff7eb3,
+            8px 6px 1px #ffbd59,
+            7px 7px 1px #ff7eb3,
+            9px 7px 1px #ffbd59;
+
+    span {
+        display: block;
+        position: relative;
+
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            text-shadow:
+                    2px 2px 1px #ffc6ff,
+                    -1px -1px 1px #ffa3e0,
+                    -2px 2px 1px #ffc6ff,
+                    1px -1px 1px #ffa3e0;
+            z-index: 1;
+        }
+    }
+}
+
+.emphasize {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.emphasize::after {
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    height: 0.5rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    /*z-index: -1;*/
+
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
