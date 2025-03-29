@@ -8,7 +8,7 @@ export function Navbar() {
       <NavLink to="myWork">MY WORK</NavLink>
       <NavLink resume to={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank">
         <div className="flex gap-2 items-center">
-          RESUME <HiOutlineLink/>
+          RESUMÉ<HiOutlineLink/>
         </div>
       </NavLink>
     </div>
